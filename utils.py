@@ -24,7 +24,26 @@ def build_string(question, options, is_menu=False):
 def translate_int_to_answer(input, options):
     """ 
     i'm returning an answer from an int 
-    because the player chooses an answer via integers
+    because the player chooses an answer via numbers
     and the answer check is done via the answer string
     """
     return options[int(input) - 1]
+
+
+def user_wants_to_save():
+    """
+    Self explanatory
+    """
+    while True:
+        try:
+            wish = input("Do you want to save your scores (Y/n)\n").lower()
+            if wish == "y":
+                return True
+            elif wish == "n":
+                return False
+            else:
+                print("Please provide a correct input as mentionned: y or n")
+                continue
+        except Exception as e:
+            print(f"Unexpected error : {e}")
+            continue

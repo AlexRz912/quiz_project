@@ -1,4 +1,4 @@
 from quiz import Quiz
 
 q = Quiz()
-print(q.data)
+print(q.get_question_by_index(0))
