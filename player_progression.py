@@ -17,11 +17,11 @@ class PlayerProgression:
         """ implement  """
         self.score += 1
 
-    def add_answer_to_progression(self, answer, is_correct=False):
+    def add_answer_to_progression(self, answer, question_index, is_correct=False):
         """ self explanatory """
         if is_correct:
-            self.answers["correct_answers"].add(answer)
+            self.answers["correct_answers"][question_index] = answer
         else:
-            self.answers["wrong_answers"].add(answer)
+            self.answers["wrong_answers"][question_index] = answer
 
     

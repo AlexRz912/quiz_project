@@ -16,14 +16,16 @@ __author__ = "rodrig_a"
 
 class Quiz:
     def __init__(self):
-        self.data = load_questions()
-        self.questions = generate_quiz()
+        self.data = self.load_questions()
+        self.questions = self.generate_questions()
 
-    def load_questions():
-        return
+    def load_questions(self):
+        with open("data/questions.json", "r", encoding="utf-8") as f:
+            data = json.load(f)
+        return data
 
-    def generate_questions():
-        return
+    def generate_questions(self):
+        return []
 
     def get_question_by_index():
         return
