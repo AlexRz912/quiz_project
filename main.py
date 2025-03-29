@@ -33,7 +33,7 @@ def main():
             give_time_to_read(1)
             clear_terminal()
             return
-            
+
         if user_choice == '2':
             clear_terminal()
             problem = load_results_if_no_error()
@@ -73,7 +73,7 @@ def question_loop(question_index, player_progression, quiz):
 
 def choice_menu():
     """ ask for starting game, see results or quit """
-    menu_string = build_string("Welcome to Quizzified :", ["Play", "See results", "Quit"], True)
+    menu_string = build_string("Welcome to Quizzified :", ["Play", "See results", "Quit"])
     user_choice = input(menu_string)
     return user_choice
         

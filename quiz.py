@@ -35,14 +35,13 @@ class Quiz:
 
             with open("data/questions.json", "r", encoding="utf-8") as f:
                 data = json.load(f)
-
             # for i in data:
-                # if i["question"] not in i:
-                    # raise KeyError()
-                # if i["options"] not in i:
-                    # raise KeyError()
-                # if i["reponse"] not in i:
-                    # raise KeyError()
+            #   if i["question"] not in i:
+                #   raise KeyError()
+            #   if i["options"] not in i:
+                #   raise KeyError()
+            #   if i["reponse"] not in i:
+                #   raise KeyError()
 
             return data       
                 

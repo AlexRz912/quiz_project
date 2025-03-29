@@ -12,7 +12,7 @@ from datetime import date
 __author__ = "rodrig_a"
 
 
-def build_string(question, options, is_menu=False):
+def build_string(question, options):
     """
     i've implemented it as functionnal programming because I don't
     need any string creator class
@@ -20,10 +20,7 @@ def build_string(question, options, is_menu=False):
     delimiter = "------------------------------------------------------------------------------------"
     question_string = delimiter + "\n\n" + question + "\n\n" + delimiter + "\n"
     for i in options:
-        if is_menu:
-            question_string += f"\n{options.index(i) + 1}. {i}"
-        else:
-            question_string += f"\n{options.index(i) + 1}. {i}" 
+        question_string += f"\n{options.index(i) + 1}. {i}" 
     return "\n" + question_string + "\n\n\n"
 
 
