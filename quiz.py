@@ -8,6 +8,8 @@ import json
 import random
 
 
+from colorama import Fore, Style
+
 import utils
 
 
@@ -76,12 +78,14 @@ class Question:
 
     def prompt_wrong_answer(self):
         """self explanatory"""
-        print(f"Wrong, right answer was {self.answer}")
+        print("")
+        print(f"{Fore.RED + 'Wrong !!!' + Style.RESET_ALL} 😩\n\nRight answer was {self.answer} ")
 
 
     def prompt_correct_answer(self):
         """self explanatory"""
-        print(f"Good job! this is correct")
+        print("")
+        print(f"{Fore.GREEN + 'Correct answer !' + Style.RESET_ALL} 🤓")
 
 
     def ask_question_get_answer(self, question):

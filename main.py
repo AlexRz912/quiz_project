@@ -3,12 +3,16 @@
 
 """Quizzified"""
 
+
 import json
 
 from utils import build_string
 from utils import user_wants_to_save
 from utils import get_date
 from utils import get_percentage_as_int
+from utils import clear_terminal
+from utils import give_time_to_read
+
 from player_progression import PlayerProgression
 from quiz import Quiz
 from user import User
@@ -20,9 +24,13 @@ __author__ = "rodrig_a"
 def main():
     """ starts main loop, three possibilites """
     while True:
+        clear_terminal()
         user_choice = choice_menu()
         if user_choice == '3':
-            print("Byebye !")
+            clear_terminal()
+            print("👋 Byebye !")
+            give_time_to_read(1)
+            clear_terminal()
             return
         if user_choice == '2':
             problem = load_results_if_no_error()
@@ -41,6 +49,7 @@ def main():
 def question_loop(question_index, player_progression, quiz):
     """quiz question loop"""
     while True:
+        clear_terminal()
         question = quiz.get_question_by_index(question_index)
         question_index += 1
         answer = question.ask_question_get_answer(question)
@@ -53,7 +62,9 @@ def question_loop(question_index, player_progression, quiz):
             question.prompt_wrong_answer()
             player_progression.add_answer_to_progression(answer, question_index)
 
+        give_time_to_read(2)
         if question_index >= quiz.get_questions_count():
+            clear_terminal()
             return question_index
 
 
@@ -85,8 +96,9 @@ def load_results_if_no_error():
     try:
         with open("data/utilisateurs.json", "r", encoding="utf-8") as user_results_file:
             user_results = json.load(user_results_file)
-        for username, user in user_results.items():  # Parcours du dictionnaire avec la clé et l'objet utilisateur
-            prompt_results_for_user(username, user)  # Passe l'utilisateur complet à la fonction
+        for username, user in user_results.items():  
+            prompt_results_for_user(username, user)
+        input("press enter to continue :\n")
         return False
 
     except KeyError:
@@ -97,11 +109,14 @@ def load_results_if_no_error():
         return True
 
 def prompt_results_for_user(username, user):
-    print(f"Scores for {username}:\n")
+    print(f"Scores for {username}:\n\n")
+
+    print(f"{len(user['scores'])} attempts :\n")
     for i in user["scores"]:
         prompt_result(i)
+    print("\n")
 
 def prompt_result(score_record):
-    print(f"{score_record}\n")
-
+    for i, v in score_record.items():
+        print(f"{i}: {v}")
 main()
