@@ -26,8 +26,40 @@
         "scores": [
             {
                 "theme": null,
-                "score": null,
-                "date": null
+                "score": 80,
+                "date": "2025-03-29"
+            },
+            {
+                "theme": null,
+                "score": 80,
+                "date": "2025-03-29"
+            }
+        ]
+    },
+    "eve": {
+        "scores": [
+            {
+                "theme": null,
+                "score": 10,
+                "date": "2025-03-29"
+            }
+        ]
+    },
+    "Redteamer": {
+        "scores": [
+            {
+                "theme": null,
+                "score": 60,
+                "date": "2025-03-29"
+            }
+        ]
+    },
+    "hacker_pro": {
+        "scores": [
+            {
+                "theme": null,
+                "score": 60,
+                "date": "2025-03-29"
             }
         ]
     }

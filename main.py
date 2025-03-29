@@ -5,10 +5,10 @@
 
 import time
 
-
 from utils import build_string
 from utils import user_wants_to_save
-
+from utils import get_date
+from utils import get_percentage_as_int
 from player_progression import PlayerProgression
 from quiz import Quiz
 from user import User
@@ -60,12 +60,21 @@ def choice_menu():
     return user_choice
         
 def game_ended(player_progression, question_count):
+
     player_progression.prompt_score(question_count)
     player_progression.prompt_answers()
+
     if user_wants_to_save():
+
         nickname = input("Choose a nickname :\n")
-        score_percent = player_progression.score / question_count * 100
-        user = User(nickname, player_progression.score)
-        user.save_score()
+        user = User(
+            nickname, 
+            get_percentage_as_int(player_progression.score, question_count), 
+            get_date()
+        )
+        user.users_data = user.json_load_all_users()
+        if not user.users_exists():
+            user.json_save_user()
+        user.json_save_score()
 
 main()

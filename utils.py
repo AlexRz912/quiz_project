@@ -3,6 +3,8 @@
 
 """Title"""
 
+from datetime import date
+
 
 __author__ = "rodrig_a"
 
@@ -47,3 +49,13 @@ def user_wants_to_save():
         except Exception as e:
             print(f"Unexpected error : {e}")
             continue
+
+def get_date():
+    """ pure util as they come lol """
+    return date.today().strftime("%Y-%m-%d")
+
+def get_percentage_as_int(value, max_value):
+    """ 
+    Self explanatory 
+    """
+    return int(value / max_value * 100)
