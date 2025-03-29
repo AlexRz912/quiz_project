@@ -64,5 +64,8 @@ def game_ended(player_progression, question_count):
     player_progression.prompt_answers()
     if user_wants_to_save():
         nickname = input("Choose a nickname :\n")
-        user = User(nickname)
+        score_percent = player_progression.score / question_count * 100
+        user = User(nickname, player_progression.score)
+        user.save_score()
+
 main()

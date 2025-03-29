@@ -1,4 +1,5 @@
-from quiz import Quiz
+from user import User
 
-q = Quiz()
-print(q.get_question_by_index(0))
+u = User("royal_blood", 80)
+u.users_data = u.json_load_user_if_exists()
+u.json_save_user()
