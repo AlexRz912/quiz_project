@@ -85,5 +85,23 @@
                 "date": "2025-03-29"
             }
         ]
+    },
+    "roberto": {
+        "scores": [
+            {
+                "theme": null,
+                "score": 40,
+                "date": "2025-03-29"
+            }
+        ]
+    },
+    "toto": {
+        "scores": [
+            {
+                "theme": null,
+                "score": 80,
+                "date": "2025-03-29"
+            }
+        ]
     }
 }

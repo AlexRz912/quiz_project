@@ -1,4 +1,5 @@
 import time
+from colorama import Fore, Style
 
 class PlayerProgression:
     """ 
@@ -8,7 +9,6 @@ class PlayerProgression:
     Most of the class is dealing with player score and correct/wrong answers, 
     and a User won't even be created if the player decides not to.
     """
-
     def __init__(self):
         """ I've divided those for easier access later """
         self.score = 0
@@ -34,12 +34,17 @@ class PlayerProgression:
         print(f"Your score is {self.score}/{count}\n")
 
     def prompt_answers(self):
-        print(self.answers)
         """ code smell that HAS to get refactored """  
-        print("Correct Answers:\n")
+        print(f"{Fore.GREEN + 'Correct Answers' + Style.RESET_ALL}:\n")
+        i = 0
         for answer in self.answers["correct_answers"].items():
-            print(f"{answer}\n")
+            i += 1
+            print(f"{i} : {answer[1]}\n")
 
-        print("Wrong Answers:\n")
+        print(f"{Fore.RED + 'Wrong Answers' + Style.RESET_ALL}\n")
+        j = 0
         for answer in self.answers["wrong_answers"].items():
-            print(f"{answer}\n")
+            j += 1
+            print(f"{j} : {answer[1]}\n")
+        if j == 0:
+            print("CONGRATS, YOU GOT NO WRONG ANSWERS !!!")

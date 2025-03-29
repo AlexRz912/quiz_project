@@ -31,10 +31,29 @@ class Quiz:
 
     def load_questions(self):
         """json load, nothing much to say about it"""
-        with open("data/questions.json", "r", encoding="utf-8") as f:
-            data = json.load(f)
-        return data
-        
+        try:
+
+            with open("data/questions.json", "r", encoding="utf-8") as f:
+                data = json.load(f)
+
+            # for i in data:
+                # if i["question"] not in i:
+                    # raise KeyError()
+                # if i["options"] not in i:
+                    # raise KeyError()
+                # if i["reponse"] not in i:
+                    # raise KeyError()
+
+            return data       
+                
+        except FileNotFoundError:
+            print("file data/questions.json not found, PLEASE create questions.json in data in data folder")
+            utils.give_time_to_read(3)
+            raise FileNotFoundError()
+
+        except KeyError:
+            print("Some of the questions aren't formatted properly, PLEASE update questions.json in data folder")
+          
     def generate_questions(self):
         """calls min_five_question, because I'm delegating the shit code to a sub method"""
         return self.min_five_questions([])

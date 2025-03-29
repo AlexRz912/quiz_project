@@ -42,7 +42,7 @@ def user_wants_to_save():
     """
     while True:
         try:
-            wish = input("Do you want to save your scores (Y/n)\n").lower()
+            wish = input("Do you want to save your score (Y/n)\n").lower()
             if wish == "y":
                 return True
             elif wish == "n":

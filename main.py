@@ -27,12 +27,15 @@ def main():
         clear_terminal()
         user_choice = choice_menu()
         if user_choice == '3':
+
             clear_terminal()
             print("👋 Byebye !")
             give_time_to_read(1)
             clear_terminal()
             return
+            
         if user_choice == '2':
+            clear_terminal()
             problem = load_results_if_no_error()
             if not problem:
                 continue
@@ -119,4 +122,5 @@ def prompt_results_for_user(username, user):
 def prompt_result(score_record):
     for i, v in score_record.items():
         print(f"{i}: {v}")
+
 main()
