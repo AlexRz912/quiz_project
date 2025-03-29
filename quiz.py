@@ -57,7 +57,6 @@ class Quiz:
         return len(self.questions)
 
     
-
 class Question:
     """I've created this class"""
     def __init__(self, question: dict):

@@ -62,5 +62,19 @@
                 "date": "2025-03-29"
             }
         ]
+    },
+    "pablo_escobar": {
+        "scores": [
+            {
+                "theme": null,
+                "score": 50,
+                "date": "2025-03-29"
+            },
+            {
+                "theme": null,
+                "score": 100,
+                "date": "2025-03-29"
+            }
+        ]
     }
 }

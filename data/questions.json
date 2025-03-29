@@ -1,16 +1,72 @@
 [
     {
-     "id": 1,
-     "theme": "Python",
-     "question": "Quelle est la sortie de print(type(3)) ?",
-     "options": ["<class 'int'>", "<class 'str'>", "<class 'float'>", "<class 'bool'>"],
-     "reponse": "<class 'int'>"
+        "id": 1,
+        "theme": "Python",
+        "question": "Quelle est la sortie de print(type(3)) ?",
+        "options": ["<class 'int'>", "<class 'str'>", "<class 'float'>", "<class 'bool'>"],
+        "reponse": "<class 'int'>"
     },
     {
-     "id": 2,
-     "theme": "Histoire",
-     "question": "En quelle année Christophe Colomb a-t-il découvert l'Amérique ?",
-     "options": ["1492", "1620", "1776", "1945"],
-     "reponse": "1492"
+        "id": 2,
+        "theme": "Histoire",
+        "question": "En quelle année Christophe Colomb a-t-il découvert l'Amérique ?",
+        "options": ["1492", "1620", "1776", "1945"],
+        "reponse": "1492"
+    },
+    {
+        "id": 3,
+        "theme": "Mathématiques",
+        "question": "Quel est le résultat de 7 x 8 ?",
+        "options": ["54", "56", "64", "72"],
+        "reponse": "56"
+    },
+    {
+        "id": 4,
+        "theme": "Géographie",
+        "question": "Quelle est la capitale du Japon ?",
+        "options": ["Pékin", "Séoul", "Tokyo", "Bangkok"],
+        "reponse": "Tokyo"
+    },
+    {
+        "id": 5,
+        "theme": "Physique",
+        "question": "Quelle est la charge d'un électron ?",
+        "options": ["Positive", "Négative", "Neutre", "Variable"],
+        "reponse": "Négative"
+    },
+    {
+        "id": 6,
+        "theme": "Cinéma",
+        "question": "Quel est le réalisateur du film 'Inception' ?",
+        "options": ["Steven Spielberg", "Christopher Nolan", "James Cameron", "Quentin Tarantino"],
+        "reponse": "Christopher Nolan"
+    },
+    {
+        "id": 7,
+        "theme": "Sport",
+        "question": "Combien de joueurs y a-t-il dans une équipe de football (soccer) sur le terrain ?",
+        "options": ["9", "10", "11", "12"],
+        "reponse": "11"
+    },
+    {
+        "id": 8,
+        "theme": "Musique",
+        "question": "Quel groupe a sorti l'album 'The Dark Side of the Moon' ?",
+        "options": ["The Beatles", "Pink Floyd", "Led Zeppelin", "The Rolling Stones"],
+        "reponse": "Pink Floyd"
+    },
+    {
+        "id": 9,
+        "theme": "Littérature",
+        "question": "Qui a écrit '1984' ?",
+        "options": ["George Orwell", "Aldous Huxley", "Jules Verne", "Victor Hugo"],
+        "reponse": "George Orwell"
+    },
+    {
+        "id": 10,
+        "theme": "Informatique",
+        "question": "Quel est le langage de programmation principal utilisé pour le développement d'Android ?",
+        "options": ["Swift", "Java", "C#", "Python"],
+        "reponse": "Java"
     }
 ]

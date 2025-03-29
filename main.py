@@ -3,7 +3,7 @@
 
 """Quizzified"""
 
-import time
+import json
 
 from utils import build_string
 from utils import user_wants_to_save
@@ -24,9 +24,13 @@ def main():
         if user_choice == '3':
             print("Byebye !")
             return
-        elif user_choice == '2':
-            raise NotImplementedError
-        elif user_choice == '1':
+        if user_choice == '2':
+            problem = load_results_if_no_error()
+            if not problem:
+                continue
+            print("Something wrong occured, please see above notice before contacting us (RTFM)")
+            return
+        if user_choice == '1':
             index = 0
             progression = PlayerProgression()
             quiz = Quiz()
@@ -76,5 +80,28 @@ def game_ended(player_progression, question_count):
         if not user.users_exists():
             user.json_save_user()
         user.json_save_score()
+
+def load_results_if_no_error():
+    try:
+        with open("data/utilisateurs.json", "r", encoding="utf-8") as user_results_file:
+            user_results = json.load(user_results_file)
+        for username, user in user_results.items():  # Parcours du dictionnaire avec la clé et l'objet utilisateur
+            prompt_results_for_user(username, user)  # Passe l'utilisateur complet à la fonction
+        return False
+
+    except KeyError:
+        print("Error encountered while trying to print, data/utilisateurs.json entries are not valid")
+        return True
+    except FileNotFoundError:
+        print("Error encountered while trying to load data/utilisateurs.json. File doesn't exist.")
+        return True
+
+def prompt_results_for_user(username, user):
+    print(f"Scores for {username}:\n")
+    for i in user["scores"]:
+        prompt_result(i)
+
+def prompt_result(score_record):
+    print(f"{score_record}\n")
 
 main()
